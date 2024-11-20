@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peoyecto DW</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-menu">
+                <img class="logo" src="/img/RealHastaLaMuerte.png" alt="">
+                <i class='bx bx-menu menu-btn'></i>
+            </div>
+            <ul class="lista active">
+                <li class="lista-item">
+                    <a href="#" onclick="showForm('personas')">
+                        <i class='bx bx-user-plus'></i>
+                        <span  class="nombre-link" style="--i:1;">Personas</span>
+                    </a>
+                </li>
+                <li class="lista-item">
+                    <a href="#" onclick="showForm('proyectos')">
+                        <i class='bx bx-folder-plus'></i>
+                        <span  class="nombre-link" style="--i:2;"> Proyectos</span>
+                    </a>
+                </li>
+                <li class="lista-item">
+                    <a href="#" onclick="showForm('asociar')">
+                        <i class='bx bx-add-to-queue'></i>
+                        <span  class="nombre-link" style="--i:3;">Asociar Proyectos</span>
+                        </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content" id="main-content">
+            
+            <section id="form-personas" class="form-section" style="display: none;">
+                <h2>Personas</h2>
+                <form id="personasForm" onsubmit="guardarPersona(event)">
+                    <div class="form-group">
+                        <label for="nombres">Nombres:</label>
+                        <input type="text" id="nombres" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoIdentificacion">Tipo Identificación:</label>
+                        <select id="tipoIdentificacion" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Cedula">Cédula</option>
+                            <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                        </select>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="identificacion">Identificación:</label>
+                        <input type="text" id="identificacion" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" id="fechaNacimiento" required>
+                    </div>
+                    
+                    <div class="columna">
+                        <div class="form-group">
+                            <label for="ciudadResidencia">Ciudad de Residencia:</label>
+                            <input type="text" id="ciudadResidencia" required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="direccion">Dirección:</label>
+                            <input type="text" id="direccion" required>
+                        </div>
+                    </div>
+                    
+
+                    <button class="Btnguardar" type="submit">Guardar</button>
+                </form>
+
+                <div id="personasList">
+                    <h3>Personas Guardadas:</h3>
+                    <ul id="listadoPersonas"></ul>
+                </div>
+            </section>
+
+            
+            <section id="form-proyectos" class="form-section" style="display: none;">
+                <h2>Proyectos</h2>
+                <form id="proyectosForm" onsubmit="guardarProyecto(event)">
+                    <div class="form-group">
+                        <label for="nombreProyecto">Nombre del Proyecto:</label>
+                        <input type="text" id="nombreProyecto" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaCreacion">Fecha de Creación:</label>
+                        <input type="date" id="fechaCreacion" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaFin">Fecha de Fin:</label>
+                        <input type="date" id="fechaFin" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="objetivo">Objetivo:</label>
+                        <input type="text" id="objetivo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="presupuesto">Presupuesto:</label>
+                        <input type="number" id="presupuesto" required>
+                    </div>
+
+                    <button type="submit" class="btnproyecto">Guardar</button>
+                </form>
+
+                <div id="proyectosList">
+                    <h3>Proyectos Guardados:</h3>
+                    <ul id="listadoProyectos"></ul>
+                </div>
+            </section>
+
+            
+            <section id="form-asociar" class="form-section" style="display: none;">
+                <h2>Asociar Personas a Proyectos</h2>
+                <form id="asociarForm" onsubmit="asociarPersonaProyecto(event)">
+                    <div class="form-group">
+                        <label for="selectPersona">Persona:</label>
+                        <select id="selectPersona" required></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selectProyecto">Proyecto:</label>
+                        <select id="selectProyecto" required></select>
+                    </div>
+
+                    <button type="submit" class="btnasociar">Asociar</button>
+                </form>
+
+                <div id="asociacionesList">
+                    <h3>Asociaciones Guardadas:</h3>
+                    <ul id="listadoAsociaciones"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

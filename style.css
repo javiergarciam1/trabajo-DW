@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url('/img/universo-planeta_3840x2160_xtrafondos.com.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff; 
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px; 
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(40px);
+    border-right: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 6px 14px;
+    transition: width 0.5s;
+    z-index: 1;
+}
+
+.sidebar.active {
+    width: 260px; 
+}
+
+.sidebar .logo-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+.sidebar .logo-menu .logo {
+    width: 150px;
+    height: 120px;
+    pointer-events: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+.sidebar.active .logo-menu .logo {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+.sidebar .logo-menu .menu-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.sidebar.active .logo-menu .menu-btn {
+    left: 90%;
+}
+
+.sidebar .lista {
+    margin-top: 10px;
+}
+
+.lista .lista-item {
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    line-height: 50px;
+}
+
+.lista .lista-item a {
+    display: flex;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: .5s;
+}
+
+.lista .lista-item.active a,
+.lista .lista-item a:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+.lista .lista-item a i {
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .nombre-link {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.sidebar.active .nombre-link {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: calc(.1s * var(--i));
+}
+
+
+
+.main-content {
+    margin-left: 100px; 
+    padding: 20px;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    flex: 1;
+}
+
+.form-section {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 8px;
+}
+
+.columna {
+    display: flex;         
+    gap: 15px;              
+    width: 100%;            
+    justify-content: space-between;
+}
+
+.columna .form-group {
+    flex: 1;                
+}
+
+.form-group input {
+    width: 100%;           
+}
+
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group select {
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #fff;
+    color: black;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+#tipoIdentificacion {
+    margin-top: 10px;
+}
+
+.Btnguardar {
+    width: 70%;
+    background-color: #049c10; 
+    color: #fff;
+    padding: 15px 30px; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem; 
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.Btnguardar:hover {
+    background-color: #037b0c; 
+    transform: scale(1.05); 
+}
+
+.Btnguardar:active {
+    transform: scale(0.98); 
+}
+
+.btnproyecto {
+    width: 70%;
+    background-color: #049c10; 
+    color: #fff;
+    padding: 15px 30px; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem; 
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.btnproyecto:hover {
+    background-color: #037b0c; 
+    transform: scale(1.05); 
+}
+
+.btnproyecto:active {
+    transform: scale(0.98); 
+}
+
+.btnasociar {
+    width: 70%;
+    background-color: #049c10; 
+    color: #fff;
+    padding: 15px 30px; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem; 
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.btnasociar:hover {
+    background-color: #037b0c; 
+    transform: scale(1.05); 
+}
+
+.btnasociar:active {
+    transform: scale(0.98); 
+}
+
+h2, h3 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+ul#listadoPersonas, ul#listadoProyectos, ul#listadoAsociaciones {
+    list-style: none;
+    padding: 0;
+}
+
+ul#listadoPersonas li, ul#listadoProyectos li, ul#listadoAsociaciones li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+.edit-btn:hover {
+    background-color: #8e6b02;
+    transform: scale(1.05);
+}
+
+.edit-btn:active {
+    transform: scale(0.98);
+}
+
+.delete-btn:hover {
+    background-color: #7d1d26;
+    transform: scale(1.05);
+}
+
+.delete-btn:active {
+    transform: scale(0.98);  
+}
+
+
+
+
+
